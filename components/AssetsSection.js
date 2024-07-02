@@ -1,110 +1,71 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 
 const AssetsSection = () => {
-  const data = [
-    {
-      name: "BTC/USD",
-      lastTrade: "$63,000.00",
-      change24h: "-2.21%",
-      changeValue: "-$1,426.18",
-      icon: "🟧",
-    },
-    {
-      name: "ETH/USD",
-      lastTrade: "$3,408.90",
-      change24h: "-0.33%",
-      changeValue: "-$11.20",
-      icon: "🟪",
-    },
-    {
-      name: "DOGE/USD",
-      lastTrade: "$0.15",
-      change24h: "+15.75%",
-      changeValue: "+$0.02",
-      icon: "🟨",
-    },
-    {
-      name: "ALGO/USD",
-      lastTrade: "$0.15",
-      change24h: "0.00%",
-      changeValue: "$0.00",
-      icon: "⬛",
-    },
-    {
-      name: "DOT/USD",
-      lastTrade: "$3.64",
-      change24h: "0.00%",
-      changeValue: "$0.00",
-      icon: "🟣",
-    },
-    {
-      name: "UNI/USD",
-      lastTrade: "$9.79",
-      change24h: "0.00%",
-      changeValue: "$0.00",
-      icon: "🟡",
-    },
-    {
-      name: "COMP/USD",
-      lastTrade: "$45.67",
-      change24h: "-0.95%",
-      changeValue: "-$0.44",
-      icon: "🟢",
-    },
-  ];
+  const [assets, setAssets] = useState([]);
 
   const getColorClass = (value) => {
-    if (value.startsWith("-")) {
-      return "text-red-500";
-    } else if (value.startsWith("+")) {
-      return "text-green-500";
-    } else if (value === "0.00%" || value === "$0.00") {
-      return "text-gray-500";
+    // Convert value to a string if it's not null or undefined
+    value = value ? String(value) : '';
+
+    if (value.startsWith('-')) {
+      return 'text-red-500';
+    } else if (value.startsWith('+')) {
+      return 'text-green-500';
+    } else if (value === '0.00%' || value === '$0.00') {
+      return 'text-gray-500';
     } else {
-      return "";
+      return '';
     }
   };
 
+  // Fetching data from the API on component mount
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/assets'); // Ensure this URL points to your API endpoint
+        const data = await response.json();
+        setAssets(data);
+      } catch (error) {
+        console.error('Failed to fetch assets:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <div
-      className=" flex items-center justify-center"
-      //   style={{ backgroundImage: "url(/assets/hero-bg.jpg)" }}
-    >
-      <div className="backdrop-blur-sm bg-[#ffffff]/20 bg-opacity-50 p-6 rounded-xl  border border-red max-w-4xl w-full">
-        <table className="w-full text-left text-white ">
-          <thead className=" border-b border-b-[#4F4F4F]">
-            <tr>
-              <th className="py-2 px-4">Assets</th>
-              <th className="py-2 px-4">Last Trade</th>
-              <th className="py-2 px-4">24H %</th>
-              <th className="py-2 px-4">24H Change</th>
-              <th className="py-2 px-4">More</th>
+    <div className="backdrop-blur-md bg-[##000000]/20 bg-opacity-50 p-6 rounded-xl border border-[#464646]  w-full">
+      <table className="w-full text-left text-white">
+        <thead className="border-b border-b-[#4F4F4F]">
+          <tr className="text-xl font-semibold">
+            <th className="py-2 px-4">Assets</th>
+            <th className="py-2 px-4">Last Trade</th>
+            <th className="py-2 px-4">24H %</th>
+            <th className="py-2 px-4">24H Change</th>
+            <th className="py-2 px-4 text-[#3980FF] flex gap-2 items-center ">
+              <p className="text-xl">More</p>
+
+              <i className="fa fa-angle-right text-[#3980FF]" aria-hidden="true"></i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {assets.map((item, index) => (
+            <tr key={index} className="border-gray-700 text-xl font-thin ">
+              <td className="py-2 px-4 flex items-center gap-4">
+                <img src={item.imageUrl} className="w-16 " />
+                <p>{item.symbol}</p>
+              </td>
+              <td className="py-2 px-4">{item.lastTrade}</td>
+              <td className={`py-2 px-4 ${getColorClass(item.percentageChange24h)}`}>{item.percentageChange24h}</td>
+              <td className={`py-2 px-4 ${getColorClass(item.priceChange24h)}`}>{item.priceChange24h}</td>
+              <td className="py-2 px-4">
+                <button className="bg-[#6DFF8B] hover:bg-green-700 text-[#00554B] font-bold py-1 px-4 ">Trade</button>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {data.map((item, index) => (
-              <tr key={index} className="  border-gray-700">
-                <td className="py-2 px-4 flex items-center">
-                  <span className="mr-2">{item.icon}</span>
-                  {item.name}
-                </td>
-                <td className="py-2 px-4">{item.lastTrade}</td>
-                <td className={`py-2 px-4 ${getColorClass(item.change24h)}`}>
-                  {item.change24h}
-                </td>
-                <td className={`py-2 px-4 ${getColorClass(item.changeValue)}`}>
-                  {item.changeValue}
-                </td>
-                <td className="py-2 px-4">
-                  <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded">
-                    Trade
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 };
