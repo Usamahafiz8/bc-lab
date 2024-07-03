@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#1F1F1F',
+        primary: '#9945FF',
         secondary: '#2D2D2D',
         accent: '#5E3BE1',
         'accent-dark': '#4B32B3', // Darker shade for hover effect

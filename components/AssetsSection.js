@@ -42,10 +42,10 @@ const AssetsSection = () => {
             <th className="py-2 px-4">Last Trade</th>
             <th className="py-2 px-4">24H %</th>
             <th className="py-2 px-4">24H Change</th>
-            <th className="py-2 px-4 text-[#3980FF] flex gap-2 items-center ">
+            <th className="py-2 px-4 text-[#3980FF] flex gap-2 items-center cursor-pointer ">
               <p className="text-xl">More</p>
 
-              <i className="fa fa-angle-right text-[#3980FF]" aria-hidden="true"></i>
+              <i className="fa fa-angle-right text-[#3980FF] " aria-hidden="true"></i>
             </th>
           </tr>
         </thead>
