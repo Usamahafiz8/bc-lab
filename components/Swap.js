@@ -33,7 +33,7 @@ const Swap = () => {
           </div>
 
           <div className=" absolute text-purple-500 transform scale-150 cursor-pointer">
-            <Image src="/assets/swap.svg" alt="Swap Icon" width={32} height={32} />
+            <Image src="/assets/swap1.svg" alt="Swap Icon" width={32} height={32} />
           </div>
 
           <div className="container  bg-[#1E1E1E] flex justify-between items-center rounded-r-lg py-6 px-14">
