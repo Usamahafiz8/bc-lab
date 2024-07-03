@@ -1,17 +1,11 @@
-import Image from "next/image";
-import Button from "./Button";
-
+import Image from 'next/image';
+import Button from './Button';
 
 const Header = () => {
   return (
     <header className="bg-transparent p-6 text-white z-50">
       <div className="container mx-auto flex flex-wrap relative z-10 justify-between items-center">
-        <Image
-          src="/assets/BlockChainLogo.svg"
-          alt="Logo"
-          width={150}
-          height={150}
-        />
+        <Image src="/assets/BlockChainLogo.svg" alt="Logo" width={180} height={150} />
         <div className="flex items-center space-x-4">
           <nav className="space-x-6">
             <a href="#" className="text-white hover:text-gray-light">

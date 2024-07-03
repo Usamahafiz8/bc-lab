@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Assessment Introduction
 
-## Getting Started
+## 1. Create design in NextJS
 
-First, run the development server:
+- Consider responsiveness. Don't need to consider mobile view.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 2. Create API in NextJS
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Main page asset informations should come from API
+- Add any database for the API
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Rule
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+1. NextJS
+2. Make a API in Nextjs for storing basic information about the assets informations.
+3. Use tailwindcss for CSS
+4. Use eslint, prettier: [Please check here](https://link-to-eslint-prettier-config)
 
-## Learn More
+### Instructions
 
-To learn more about Next.js, take a look at the following resources:
+- Make the UI exactly same as the image on the left.
+- Consider all data is fixed with current system
+- You can use the Korean word copy & paste it in here
+- After created the code, push it to github with your account with public, and deploy to vercel or other service so that we can check
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### My Contact Information
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Name:** Muhammad Osama Anwar
+- **Phone Number:** +92 332 6551460
+- **Email:** usamahafiz8@gmail.com
+- **LinkedIn:** [Your LinkedIn Profile](https://www.linkedin.com/in/muhammadosamaanwar/)
+- **GitHub Link:** [Your GitHub Profile](https://github.com/Usamahafiz8)
+- **Live Site URL:** [Your Site on Vercel](https://bc-lab.vercel.app/)

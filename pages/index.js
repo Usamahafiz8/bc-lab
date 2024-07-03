@@ -5,15 +5,15 @@ import Swap from '@/components/Swap';
 
 const HomePage = () => {
   return (
-    <div className="bg-black relative pb-28">
+    <div className="bg-black relative pb-28 font-roboto ">
       <div className="bg-cover bg-no-repeat bg-center h-screen" style={{ backgroundImage: 'url(/assets/hero-bg.jpg)' }}>
         <Header />
         <div className=" relative z-10">
-          <section className="container mx-auto mt-40 mb-20">
+          <section className="container mx-auto mt-16 mb-20">
             <HeroSection />
           </section>
 
-          <section className="container mx-auto mt-32 mb-20">
+          <section className="container mx-auto mt-12 mb-20">
             <AssetsSection />
           </section>
 
