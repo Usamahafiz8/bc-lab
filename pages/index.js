@@ -9,18 +9,20 @@ const HomePage = () => {
       <div className="bg-cover bg-no-repeat bg-center h-screen" style={{ backgroundImage: 'url(/assets/hero-bg.jpg)' }}>
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <Header />
-        <section className="container mx-auto mt-40 mb-20 relative z-10">
-          <HeroSection />
-        </section>
+        <div className=" relative z-10">
+          <section className="container mx-auto mt-40 mb-20">
+            <HeroSection />
+          </section>
 
+          <section className="container mx-auto mt-20 mb-20">
+            <AssetsSection />
+          </section>
+
+          <section className="container mx-auto mt-20 mb-20">
+            <Swap />
+          </section>
+        </div>
       </div>
-      <section className="container mx-auto -mt-80 mb-20">
-        <AssetsSection />
-      </section>
-
-      <section className="container mx-auto mt-20 mb-20">
-        <Swap />
-      </section>
     </div>
   );
 };
