@@ -10,25 +10,52 @@ const Swap = () => {
         <div className="flex justify-between mb-10 items-center">
           <div className="font-semibold text-xl">SWAP TOKENS</div>
           <div className="cursor-pointer">
-            <Image src="/assets/SettingIcon.svg" alt="Logo" width={30} height={30} />
+            <Image src="/assets/SettingIcon.svg" alt="Settings Icon" width={30} height={30} />
           </div>
         </div>
 
-        {/* <div className="bg-black relative pb-28">
-      <div className="bg-cover bg-no-repeat bg-center h-screen" >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-      </div>
-    </div> */}
+        <div className="relative flex justify-center items-center mb-10 gap-2">
+          <div className="container p-4 bg-[#1E1E1E] flex justify-between items-center rounded-l-lg pr-10">
+            <div className="flex flex-col justify-start">
+              <p className="text-4xl">0.00</p>
+              <p className="text-gray-400 mt-1">$0.00</p>
+            </div>
+            <div className="flex flex-col justify-start">
+              <div className="bg-black px-4 py-2 flex items-center gap-2 cursor-pointer">
+                <Image src="/assets/BTC.svg" alt="BTCIcon" width={22} height={32} />
+                <p className="font-medium text-sm">BTC</p>
+                <i className="fa fa-angle-right text-[#868686]" aria-hidden="true"></i>
+              </div>
+              <p className="text-gray-400 mt-1">
+                Balance: <span className="text-blue-400">63,790</span>
+              </p>
+            </div>
+          </div>
 
-        <div className=" relative flex gap-1 mb-10">
-          {/* Add the middle icon if needed */}
-          <div className=" absolute flex top-10 left-50 z-10">sdas</div>
-          <TokenInput balance="63,790" currency="BTC" />
-          <TokenInput balance="63,790" currency="BTC" />
+          <div className=" absolute text-purple-500 transform scale-150 cursor-pointer">
+            <Image src="/assets/Swap.svg" alt="Swap Icon" width={32} height={32} />
+          </div>
+
+          <div className="container p-4 bg-[#1E1E1E] flex justify-between items-center rounded-r-lg pl-10">
+            <div className="flex flex-col justify-start">
+              <p className="text-4xl">0.00</p>
+              <p className="text-gray-400 mt-1">$0.00</p>
+            </div>
+            <div className="flex flex-col justify-start">
+              <div className="bg-black px-4 py-2 flex items-center gap-2 cursor-pointer">
+                <Image src="/assets/BNB.svg" alt="BNB Icon" width={32} height={32} />
+                <p className="font-medium text-sm">BNB</p>
+                <i className="fa fa-angle-right text-[#868686]" aria-hidden="true"></i>
+              </div>
+              <p className="text-gray-400 mt-1">
+                Balance: <span className="text-blue-400">63,790</span>
+              </p>
+            </div>
+          </div>
         </div>
 
         <div className="text-center">
-          <Button text={'SWOP TOKENS'} styles={'w-64'} />
+          <Button text={'SWAP TOKENS'} styles={'w-64'} />
         </div>
 
         <div className="flex justify-between items-center">

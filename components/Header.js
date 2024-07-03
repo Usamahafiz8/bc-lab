@@ -5,7 +5,7 @@ import Button from "./Button";
 const Header = () => {
   return (
     <header className="bg-transparent p-6 text-white z-50">
-      <div className="container mx-auto flex relative z-10 justify-between items-center">
+      <div className="container mx-auto flex flex-wrap relative z-10 justify-between items-center">
         <Image
           src="/assets/BlockChainLogo.svg"
           alt="Logo"

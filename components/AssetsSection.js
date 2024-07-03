@@ -24,9 +24,9 @@ const AssetsSection = () => {
 
   const getColorClass = (numericValue) => {
     if (numericValue < 0) {
-      return 'text-red'; // Negative values
+      return 'text-[#FF5454]'; // Negative values
     } else if (numericValue > 0) {
-      return 'text-green'; // Positive values
+      return 'text-[#6DFFDC]'; // Positive values
     }
     return 'text-gray'; // Zero or neutral values
   };
@@ -40,25 +40,29 @@ const AssetsSection = () => {
       <table className="w-full text-left text-white">
         <thead className="border-b border-b-[#4F4F4F]">
           <tr className="text-xl font-semibold">
-            <th className="py-2 px-4">Assets</th>
-            <th className="py-2 px-4">Last Trade</th>
+            <th className="py-2 px-4">ASSETS</th>
+            <th className="py-2 px-4">LAST TRADE</th>
             <th className="py-2 px-4">24H %</th>
-            <th className="py-2 px-4">24H Change</th>
-            <th className="py-2 px-4">Actions</th>
+            <th className="py-2 px-4">24H CHANGE</th>
+            <th className="py-2 px-4 text-[#3980FF] flex gap-2 items-center cursor-pointer ">
+              <p className="text-xl">MORE</p>
+
+              <i className="fa fa-angle-right text-[#3980FF] " aria-hidden="true"></i>
+            </th>
           </tr>
         </thead>
         <tbody>
           {assets.map((item, index) => (
-            <tr key={index} className="border-gray-700 text-xl font-thin">
+            <tr key={index} className="border-gray-700 text-xl font-medium">
               <td className="py-2 px-4 flex items-center gap-4">
                 <img src={item.imageUrl} className="w-16" alt={`${item.symbol} icon`} />
                 <p>{item.symbol}</p>
               </td>
-              <td className="py-2 px-4">{item.lastTrade.toLocaleString()}</td>
+              <td className="py-2 px-4 ">${item.lastTrade.toLocaleString()}</td>
               <td className={`py-2 px-4 ${getColorClass(item.percentageChange24h)}`}>
                 {item.percentageChange24h.toFixed(2)}%
               </td>
-              <td className={`py-2 px-4 ${getColorClass(item.priceChange24h)}`}>
+              <td className={`py-2 px-4   ${getColorClass(item.priceChange24h)}`}>
                 {item.priceChange24h.toFixed(2)}
               </td>
               <td className="py-2 px-4">
